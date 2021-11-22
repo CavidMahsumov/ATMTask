@@ -1,0 +1,68 @@
+﻿<Window x:Class="ATMWithLock.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ATMWithLock"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="380" Width="800">
+    <StackPanel Background="Bisque">
+        <Button x:Name="insertBtn"
+                Content="Insert Card"
+                FontFamily="comic sans ms"
+                FontSize="30"
+                Width="250"
+                Command="{Binding InsertBtnCommand}"></Button>
+        <Label Content="Card Number"
+               FontSize="20"
+               FontFamily="comic sans ms"
+               Visibility="Hidden"
+               Name="cardNumberLbl"></Label>
+        <WrapPanel>
+            <TextBox x:Name="cardNumberTxtbx"
+                 Width="250"
+                 FontSize="24"
+                 HorizontalAlignment="Left"
+                 Margin="0,0,275,0"
+                     Visibility="Hidden"></TextBox>
+            <Label Width="250"
+                 FontSize="24"
+                 HorizontalAlignment="Left"
+                   Name="fullNameLbl"
+                   ></Label>
+        </WrapPanel>
+        <WrapPanel Margin="0,0,0,0">
+            <Button x:Name="loadBtn"
+                Content="Load Data"
+                FontFamily="comic sans ms"
+                FontSize="25"
+                Width="150"
+                HorizontalAlignment="Left"
+                Margin="0,5,390,0"
+                    Visibility="Hidden"
+                    Command="{Binding LoadBtnCommand}"></Button>
+            <Label Width="250"
+                 FontSize="24"
+                 HorizontalAlignment="Left"
+                 Name="balanceLbl"
+                 ></Label>
+        </WrapPanel>
+        <WrapPanel Margin="200,80,0,0">
+            <TextBox x:Name="moneyCountTxtbx"
+                     Width="60"
+                     Height="40"
+                     Margin="0,0,50,0"></TextBox>
+            <Button x:Name="transferBtn"
+                Content="Transfer Money"
+                FontFamily="comic sans ms"
+                FontSize="25"
+                Width="200"
+                Command="{Binding TransferMoneyBtnCommand}"></Button>
+            <Label Name="moneyAnimationLbl"
+                   Width="100"
+                   Height="60"
+                   Margin="50,0,0,0"
+                   ></Label>
+        </WrapPanel>
+    </StackPanel>
+</Window>
